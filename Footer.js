@@ -27,19 +27,19 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: 80,
 		flexDirection: 'row',
-		alignItems: 'flex-start',
+		alignItems: 'center',
 		justifyContent: 'center'
 	},
 	button: {
 		padding: 20,
-		backgroundColor: 'black',
+		backgroundColor: '#B9BBDF',
 		flex: 1,
-		borderLeftWidth: StyleSheet.hairlineWidth,
-		borderLeftColor: '#b3b3b3'
+		borderRightWidth: StyleSheet.hairlineWidth,
+		borderRightColor: '#f1f1f1'
 	},
 	text: {
-		color: 'white',
-		fontWeight: '900',
+		color: '#271D6B',
+		fontWeight: 'bold',
 		fontSize: 14,
 		textAlign: 'center'
 	}
