@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import * as RootNavigation from './RootNavigation';
+import * as RootNavigation from '../navigationRef';
 
+//Not used anywhere
 export default function Footer(props) {
 	return (
 		<View style={styles.footer}>

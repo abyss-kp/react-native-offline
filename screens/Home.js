@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function HomePage() {
 	return (
 		<View style={styles.container}>
-			<Text> This is the homepage</Text>
+			<Text> List will appear here</Text>
 		</View>
 	);
 }
