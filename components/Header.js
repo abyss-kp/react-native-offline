@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-export default function Header(props) {
-	const addToDo = () => {
-		console.log('yo');
-	};
+import { connect } from 'react-redux';
+import { showAddModal } from '../actions/modalAction';
+
+function Header(props) {
 	return (
 		<SafeAreaView style={styles.header}>
 			<View style={styles.title}>
@@ -13,13 +13,15 @@ export default function Header(props) {
 					<Icon name="note" size={30} color="#fff" />
 					<Text style={styles.text}> {props.headerDisplay}</Text>
 				</View>
-				<TouchableOpacity onPress={addToDo}>
+				<TouchableOpacity onPress={() => props.showAddModal(true)}>
 					<MaterialIcon name="add" size={40} color="#fff" />
 				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
 	);
 }
+
+export default connect(null, { showAddModal })(Header);
 
 const styles = StyleSheet.create({
 	header: {
