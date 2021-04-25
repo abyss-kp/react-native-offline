@@ -3,14 +3,13 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import Header from './Header';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AppModal from './AddModal';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export const StackNav = (name, comp) => () => {
 	return (
-		<Stack.Navigator
-			initialRouteName="Active"
-		>
+		<Stack.Navigator initialRouteName="Active">
 			<Stack.Screen
 				name={name}
 				component={comp}
