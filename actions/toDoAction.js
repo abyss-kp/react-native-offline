@@ -1,5 +1,7 @@
 import { ADD_TODO, SET_TODO, SET_LOADER } from '../constants';
 import axios from 'axios';
+const URL = 'https://sheet.best/api/sheets/31e36a0b-872d-44c3-9f07-a41d835de900';
+// const URL = 'https://sheet.best/api/sheets/376875e5-5ec1-42a0-a00b-08dc4a2438a8';
 export const addToDo = (val) => {
 	return async (dispatch) => {
 		dispatch({
@@ -7,7 +9,7 @@ export const addToDo = (val) => {
 			payload: true
 		});
 		axios
-			.post('https://sheet.best/api/sheets/376875e5-5ec1-42a0-a00b-08dc4a2438a8', val)
+			.post(URL, val)
 			.then(async (resp) => {
 				let data = await getToDo();
 				dispatch({
@@ -31,13 +33,13 @@ export const addToDo = (val) => {
 
 export const getToDo = () => {
 	return axios
-		.get('https://sheet.best/api/sheets/376875e5-5ec1-42a0-a00b-08dc4a2438a8')
+		.get(URL)
 		.then(function (response) {
 			setToDo(response.data);
 			return response.data;
 		})
 		.catch(function (error) {
-			console.log(error);
+			console.log({ error });
 		});
 };
 
@@ -53,7 +55,7 @@ export const deleteToDo = (id) => {
 			payload: true
 		});
 		axios
-			.delete(`https://sheet.best/api/sheets/376875e5-5ec1-42a0-a00b-08dc4a2438a8/id/${id}`)
+			.delete(`${URL}/id/${id}`)
 			.then(async (resp) => {
 				let data = await getToDo();
 				dispatch({
@@ -87,7 +89,7 @@ export const updateToDo = (id, data) => {
 			payload: true
 		});
 		axios
-			.patch(`https://sheet.best/api/sheets/376875e5-5ec1-42a0-a00b-08dc4a2438a8/id/${id}`, data)
+			.patch(`${URL}/id/${id}`, data)
 			.then(async (resp) => {
 				let data = await getToDo();
 				dispatch({

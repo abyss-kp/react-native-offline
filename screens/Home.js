@@ -15,7 +15,7 @@ function Home(props) {
 			let resp = (await props.getToDo()) || [];
 			let data = props.route.name === 'All' ? resp : resp.filter((itm) => itm.status === props.route.name);
 			setData(data);
-			props.setLoader(false);
+			// props.setLoader(false);
 		})();
 	};
 	useEffect(() => {

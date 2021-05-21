@@ -9,7 +9,9 @@ import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-na
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import Loader from '../components/Loader';
+import { showAddModal } from '../actions/modalAction';
 import { connect } from 'react-redux';
+import AddModal from '../components/AddModal';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -58,7 +60,6 @@ export const TabStack = () => {
 function AppNavigator(props) {
 	const [loader, setLoader] = useState(false);
 	useEffect(() => {
-		console.log({ loader, loading: props.loading });
 		if (loader !== props.loading) {
 			setLoader(props.loading);
 		}
@@ -66,6 +67,7 @@ function AppNavigator(props) {
 	return (
 		<NavigationContainer>
 			<Loader loading={loader} />
+			<AddModal />
 			<Stack.Navigator
 				// initialRouteName="Auth"
 				screenOptions={{
@@ -101,7 +103,7 @@ const mapState = (state) => {
 	return { loading };
 };
 
-export default connect(mapState)(AppNavigator);
+export default connect(mapState, { showAddModal })(AppNavigator);
 
 const styles = StyleSheet.create({
 	title2: { display: 'flex', flexDirection: 'row', marginHorizontal: 20 },
