@@ -1,11 +1,20 @@
-import React from 'react';
-import { Modal, StyleSheet, Text, Pressable, View, TouchableOpacity, TextInput } from 'react-native';
+import React, { useState } from 'react';
+import { Modal, StyleSheet, Text, Pressable, View, TouchableOpacity, TextInput, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 import { showAddModal } from '../actions/modalAction';
-import { addToDo } from '../actions/addToDoAction';
-
+import { addToDo, resetToDo } from '../actions/toDoAction';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const AddModal = (props) => {
+	const [todo, setTodo] = useState('');
+
+	const handleSave = () => {
+		props.showAddModal(false);
+		props.addToDo({
+			id: Date.now(),
+			todo,
+			status: 'Active'
+		});
+	};
 	return (
 		<View style={styles.centeredView}>
 			<Modal
@@ -21,7 +30,7 @@ const AddModal = (props) => {
 					<View style={styles.modalView}>
 						<TouchableOpacity
 							onPress={() => {
-								props.addToDo('');
+								props.resetToDo();
 								props.showAddModal(false);
 							}}
 							style={styles.closeBtn}
@@ -29,14 +38,8 @@ const AddModal = (props) => {
 							<MaterialCommunityIcons name="window-close" size={35} color="#7e7f82" />
 						</TouchableOpacity>
 						<Text style={styles.modalText}>Add item </Text>
-						<TextInput
-							style={styles.input}
-							onChangeText={(val) => props.addToDo(val)}
-							multiline
-							value={props.todo}
-							placeholder="Enter To Do"
-						/>
-						<Pressable style={[styles.button, styles.buttonClose]} onPress={() => props.showAddModal(false)}>
+						<TextInput style={styles.input} onChangeText={(val) => setTodo(val)} multiline value={todo} placeholder="Enter To Do" />
+						<Pressable style={[styles.button, styles.buttonClose]} onPress={handleSave}>
 							<Text style={styles.textStyle}>Save</Text>
 						</Pressable>
 					</View>
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
 	},
 	modalView: {
 		backgroundColor: 'white',
-		width: '90vw',
+		width: 300,
 		borderRadius: 20,
 		padding: 35,
 		alignItems: 'center',
@@ -114,4 +117,4 @@ const mapState = (state) => {
 	return { show, todo };
 };
 
-export default connect(mapState, { showAddModal, addToDo })(AddModal);
+export default connect(mapState, { showAddModal, addToDo, resetToDo })(AddModal);

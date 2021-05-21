@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-import { ADD_MODAL } from '../constants';
 import { addModalReducer } from './modalReducer';
-import { todoReducer } from './addToDo';
+import { todoReducer } from './toDoReducer';
+import { loaderReducer } from './loaderReducer';
 
 const rootReducer = combineReducers({
 	addModalReducer,
-	todoReducer
+	todoReducer,
+	loaderReducer
 });
 
 export default rootReducer;

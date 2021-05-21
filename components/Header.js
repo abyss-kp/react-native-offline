@@ -9,7 +9,7 @@ function Header(props) {
 	return (
 		<SafeAreaView style={styles.header}>
 			<View style={styles.title}>
-				<View style={styles.title}>
+				<View style={styles.title2}>
 					<Icon name="note" size={30} color="#fff" />
 					<Text style={styles.text}> {props.headerDisplay}</Text>
 				</View>
@@ -33,19 +33,21 @@ const styles = StyleSheet.create({
 		// backgroundColor: '#F6F8FA'
 		backgroundColor: '#000'
 	},
+	title2: { display: 'flex', flexDirection: 'row' },
 	title: {
 		marginVertical: 20,
-		paddingHorizontal: 80,
+		paddingHorizontal: 40,
+		width: '100%',
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'space-between'
 	},
 	text: {
 		fontFamily: 'Roboto',
 		// color: '#271D6B',
 		color: '#fff',
 		fontSize: 25,
-		fontWeight: 900
+		fontWeight: '900'
 	}
 });
