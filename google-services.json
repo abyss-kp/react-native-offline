@@ -1,0 +1,40 @@
+{
+	"project_info": {
+		"project_number": "723949376025",
+		"firebase_url": "https://crwn-shopping-udemy.firebaseio.com",
+		"project_id": "crwn-shopping-udemy",
+		"storage_bucket": "crwn-shopping-udemy.appspot.com"
+	},
+	"client": [
+		{
+			"client_info": {
+				"mobilesdk_app_id": "1:723949376025:android:abe7c2434c2814704dd088",
+				"android_client_info": {
+					"package_name": "com.driscollsinc.push"
+				}
+			},
+			"oauth_client": [
+				{
+					"client_id": "723949376025-c7lvcpghfo68ms2bc0vovklqbomhptia.apps.googleusercontent.com",
+					"client_type": 3
+				}
+			],
+			"api_key": [
+				{
+					"current_key": "AIzaSyDF-5MYS0VDZ-Y32PcvGR5OsRXexrBSgHA"
+				}
+			],
+			"services": {
+				"appinvite_service": {
+					"other_platform_oauth_client": [
+						{
+							"client_id": "723949376025-c7lvcpghfo68ms2bc0vovklqbomhptia.apps.googleusercontent.com",
+							"client_type": 3
+						}
+					]
+				}
+			}
+		}
+	],
+	"configuration_version": "1"
+}

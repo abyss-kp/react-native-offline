@@ -1,0 +1,21 @@
+{
+    "appName": "reactnativeoffline",
+    "roleName": "pinpointLambdaRole1d66e71b",
+    "cloudformationPolicyName": "cloudformationPolicy1d66e71b",
+    "cloudWatchPolicyName": "cloudWatchPolicy1d66e71b",
+    "pinpointPolicyName": "pinpointPolicy1d66e71b",
+    "authPolicyName": "pinpoint_amplify_1d66e71b",
+    "unauthPolicyName": "pinpoint_amplify_1d66e71b",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

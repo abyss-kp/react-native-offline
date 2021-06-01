@@ -1,0 +1,14 @@
+{
+	"ApplicationId": "9a8b436047374d7ab0601f1b78e859db",
+	"MessageRequest": {
+		"Endpoints": {
+			"85cfd940-bfb1-11eb-959f-5db7d76ceb83": {}
+		},
+		"MessageConfiguration": {
+			"DefaultPushNotificationMessage": {
+				"Body": "Test Body",
+				"Title": "Test Title"
+			}
+		}
+	}
+}
